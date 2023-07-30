@@ -1,0 +1,349 @@
+Microsoft Windows [Version 10.0.19045.2965]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\kmakovskiy\Documents\kmakovskiy>mkdir VirtualMachines
+
+C:\Users\kmakovskiy\Documents\kmakovskiy>cd VirtualMachines
+
+C:\Users\kmakovskiy\Documents\kmakovskiy\VirtualMachines>mkdir Ububtu14
+
+C:\Users\kmakovskiy\Documents\kmakovskiy\VirtualMachines>cd Ububtu14
+
+C:\Users\kmakovskiy\Documents\kmakovskiy\VirtualMachines\Ububtu14>vagrant box add ubuntu/trusty64
+The box 'ubuntu/trusty64' could not be found or
+could not be accessed in the remote catalog. If this is a private
+box on HashiCorp's Vagrant Cloud, please verify you're logged in via
+`vagrant login`. Also, please double-check the name. The expanded
+URL and error message are shown below:
+
+URL: ["https://vagrantcloud.com/ubuntu/trusty64"]
+Error: The requested URL returned error: 404
+
+C:\Users\kmakovskiy\Documents\kmakovskiy\VirtualMachines\Ububtu14>vagrant box add ubuntu/trusty64
+==> box: Loading metadata for box 'ubuntu/trusty64'
+    box: URL: https://vagrantcloud.com/ubuntu/trusty64
+==> box: Adding box 'ubuntu/trusty64' (v20190514.0.0) for provider: virtualbox
+    box: Downloading: https://vagrantcloud.com/ubuntu/boxes/trusty64/versions/20190514.0.0/providers/virtualbox.box
+Download redirected to host: cloud-images.ubuntu.com
+    box:
+==> box: Successfully added box 'ubuntu/trusty64' (v20190514.0.0) for 'virtualbox'!
+
+C:\Users\kmakovskiy\Documents\kmakovskiy\VirtualMachines\Ububtu14>vagrant init ubuntu/trusty64
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
+
+C:\Users\kmakovskiy\Documents\kmakovskiy\VirtualMachines\Ububtu14>vagrant plugin install vagrant-vbguest
+Installing the 'vagrant-vbguest' plugin. This can take a few minutes...
+Fetching micromachine-3.0.0.gem
+Fetching vagrant-vbguest-0.31.0.gem
+Installed the plugin 'vagrant-vbguest (0.31.0)'!
+
+C:\Users\kmakovskiy\Documents\kmakovskiy\VirtualMachines\Ububtu14>vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Importing base box 'ubuntu/trusty64'...
+==> default: Matching MAC address for NAT networking...
+==> default: Checking if box 'ubuntu/trusty64' version '20190514.0.0' is up to date...
+==> default: Setting the name of the VM: Ububtu14_default_1690713660346_70330
+==> default: Clearing any previously set forwarded ports...
+Vagrant is currently configured to create VirtualBox synced folders with
+the `SharedFoldersEnableSymlinksCreate` option enabled. If the Vagrant
+guest is not trusted, you may want to disable this option. For more
+information on this option, please refer to the VirtualBox manual:
+
+  https://www.virtualbox.org/manual/ch04.html#sharedfolders
+
+This option can be disabled globally with an environment variable:
+
+  VAGRANT_DISABLE_VBOXSYMLINKCREATE=1
+
+or on a per folder basis within the Vagrantfile:
+
+  config.vm.synced_folder '/host/path', '/guest/path', SharedFoldersEnableSymlinksCreate: false
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+==> default: Forwarding ports...
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+    default: Warning: Connection aborted. Retrying...
+    default:
+    default: Vagrant insecure key detected. Vagrant will automatically replace
+    default: this with a newly generated keypair for better security.
+    default:
+    default: Inserting generated public key within guest...
+    default: Removing insecure key from the guest if it's present...
+    default: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> default: Machine booted and ready!
+[default] A Virtualbox Guest Additions installation was found but no tools to rebuild or start them.
+ * Stopping VirtualBox Additions
+   ...done.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  acl at-spi2-core colord dconf-gsettings-backend dconf-service dkms fakeroot
+  fontconfig fontconfig-config fonts-dejavu-core gcc gcc-4.8
+  hicolor-icon-theme libasan0 libasound2 libasound2-data libatk-bridge2.0-0
+  libatk1.0-0 libatk1.0-data libatomic1 libatspi2.0-0 libavahi-client3
+  libavahi-common-data libavahi-common3 libc-dev-bin libc6-dev
+  libcairo-gobject2 libcairo2 libcanberra-gtk3-0 libcanberra-gtk3-module
+  libcanberra0 libcolord1 libcolorhug1 libcups2 libdatrie1 libdconf1
+  libdrm-intel1 libdrm-nouveau2 libdrm-radeon1 libexif12 libfakeroot
+  libfontconfig1 libfontenc1 libgcc-4.8-dev libgd3 libgdk-pixbuf2.0-0
+  libgdk-pixbuf2.0-common libgl1-mesa-dri libgl1-mesa-glx libglapi-mesa
+  libgomp1 libgphoto2-6 libgphoto2-l10n libgphoto2-port10 libgraphite2-3
+  libgtk-3-0 libgtk-3-bin libgtk-3-common libgudev-1.0-0 libgusb2
+  libharfbuzz0b libice6 libieee1284-3 libitm1 libjasper1 libjbig0
+  libjpeg-turbo8 libjpeg8 liblcms2-2 libllvm3.4 libltdl7 libnotify-bin
+  libnotify4 libogg0 libpango-1.0-0 libpangocairo-1.0-0 libpangoft2-1.0-0
+  libpciaccess0 libpixman-1-0 libquadmath0 libsane libsane-common libsm6
+  libtdb1 libthai-data libthai0 libtiff5 libtsan0 libtxc-dxtn-s2tc0 libv4l-0
+  libv4lconvert0 libvorbis0a libvorbisfile3 libvpx1 libwayland-client0
+  libwayland-cursor0 libx11-xcb1 libxaw7 libxcb-dri2-0 libxcb-dri3-0
+  libxcb-glx0 libxcb-present0 libxcb-render0 libxcb-shm0 libxcb-sync1
+  libxcomposite1 libxcursor1 libxdamage1 libxfixes3 libxfont1 libxi6
+  libxinerama1 libxkbcommon0 libxkbfile1 libxmu6 libxpm4 libxrandr2
+  libxrender1 libxshmfence1 libxt6 libxtst6 libxxf86vm1 linux-libc-dev
+  manpages-dev notification-daemon sound-theme-freedesktop x11-common
+  x11-xkb-utils xfonts-base xfonts-encodings xfonts-utils xserver-common
+  xserver-xorg-core
+Use 'apt-get autoremove' to remove them.
+The following packages will be REMOVED:
+  virtualbox-guest-dkms* virtualbox-guest-utils* virtualbox-guest-x11*
+0 upgraded, 0 newly installed, 3 to remove and 0 not upgraded.
+After this operation, 12.2 MB disk space will be freed.
+(Reading database ... 63238 files and directories currently installed.)
+Removing virtualbox-guest-dkms (4.3.40-dfsg-0ubuntu14.04.1) ...
+
+-------- Uninstall Beginning --------
+Module:  virtualbox-guest
+Version: 4.3.40
+Kernel:  3.13.0-170-generic (x86_64)
+-------------------------------------
+
+Status: Before uninstall, this module version was ACTIVE on this kernel.
+
+vboxguest.ko:
+ - Uninstallation
+   - Deleting from: /lib/modules/3.13.0-170-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+
+
+vboxsf.ko:
+ - Uninstallation
+   - Deleting from: /lib/modules/3.13.0-170-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+
+
+vboxvideo.ko:
+ - Uninstallation
+   - Deleting from: /lib/modules/3.13.0-170-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+
+depmod....
+
+DKMS: uninstall completed.
+
+------------------------------
+Deleting module version: 4.3.40
+completely from the DKMS tree.
+------------------------------
+Done.
+Removing virtualbox-guest-x11 (4.3.40-dfsg-0ubuntu14.04.1) ...
+Purging configuration files for virtualbox-guest-x11 (4.3.40-dfsg-0ubuntu14.04.1) ...
+Removing virtualbox-guest-utils (4.3.40-dfsg-0ubuntu14.04.1) ...
+Purging configuration files for virtualbox-guest-utils (4.3.40-dfsg-0ubuntu14.04.1) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.15) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+dkms is already the newest version.
+dkms set to manually installed.
+linux-headers-3.13.0-170-generic is already the newest version.
+linux-headers-3.13.0-170-generic set to manually installed.
+The following packages were automatically installed and are no longer required:
+  acl at-spi2-core colord dconf-gsettings-backend dconf-service fontconfig
+  fontconfig-config fonts-dejavu-core hicolor-icon-theme libasound2
+  libasound2-data libatk-bridge2.0-0 libatk1.0-0 libatk1.0-data libatspi2.0-0
+  libavahi-client3 libavahi-common-data libavahi-common3 libcairo-gobject2
+  libcairo2 libcanberra-gtk3-0 libcanberra-gtk3-module libcanberra0 libcolord1
+  libcolorhug1 libcups2 libdatrie1 libdconf1 libdrm-intel1 libdrm-nouveau2
+  libdrm-radeon1 libexif12 libfontconfig1 libfontenc1 libgd3
+  libgdk-pixbuf2.0-0 libgdk-pixbuf2.0-common libgl1-mesa-dri libgl1-mesa-glx
+  libglapi-mesa libgphoto2-6 libgphoto2-l10n libgphoto2-port10 libgraphite2-3
+  libgtk-3-0 libgtk-3-bin libgtk-3-common libgudev-1.0-0 libgusb2
+  libharfbuzz0b libice6 libieee1284-3 libjasper1 libjbig0 libjpeg-turbo8
+  libjpeg8 liblcms2-2 libllvm3.4 libltdl7 libnotify-bin libnotify4 libogg0
+  libpango-1.0-0 libpangocairo-1.0-0 libpangoft2-1.0-0 libpciaccess0
+  libpixman-1-0 libsane libsane-common libsm6 libtdb1 libthai-data libthai0
+  libtiff5 libtxc-dxtn-s2tc0 libv4l-0 libv4lconvert0 libvorbis0a
+  libvorbisfile3 libvpx1 libwayland-client0 libwayland-cursor0 libx11-xcb1
+  libxaw7 libxcb-dri2-0 libxcb-dri3-0 libxcb-glx0 libxcb-present0
+  libxcb-render0 libxcb-shm0 libxcb-sync1 libxcomposite1 libxcursor1
+  libxdamage1 libxfixes3 libxfont1 libxi6 libxinerama1 libxkbcommon0
+  libxkbfile1 libxmu6 libxpm4 libxrandr2 libxrender1 libxshmfence1 libxt6
+  libxtst6 libxxf86vm1 notification-daemon sound-theme-freedesktop x11-common
+  x11-xkb-utils xfonts-base xfonts-encodings xfonts-utils xserver-common
+  xserver-xorg-core
+Use 'apt-get autoremove' to remove them.
+The following extra packages will be installed:
+  dpkg-dev g++ g++-4.8 libalgorithm-diff-perl libalgorithm-diff-xs-perl
+  libalgorithm-merge-perl libdpkg-perl libfile-fcntllock-perl
+  libstdc++-4.8-dev
+Suggested packages:
+  debian-keyring g++-multilib g++-4.8-multilib gcc-4.8-doc libstdc++6-4.8-dbg
+  libstdc++-4.8-doc
+The following NEW packages will be installed:
+  build-essential dpkg-dev g++ g++-4.8 libalgorithm-diff-perl
+  libalgorithm-diff-xs-perl libalgorithm-merge-perl libdpkg-perl
+  libfile-fcntllock-perl libstdc++-4.8-dev
+0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
+Need to get 20.1 MB of archives.
+After this operation, 43.7 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libstdc++-4.8-dev amd64 4.8.4-2ubuntu1~14.04.4 [1,051 kB]
+Get:2 http://archive.ubuntu.com/ubuntu/ trusty-updates/main g++-4.8 amd64 4.8.4-2ubuntu1~14.04.4 [18.0 MB]
+Get:3 http://archive.ubuntu.com/ubuntu/ trusty/main g++ amd64 4:4.8.2-1ubuntu6 [1,490 B]
+Get:4 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libdpkg-perl all 1.17.5ubuntu5.8 [179 kB]
+Get:5 http://archive.ubuntu.com/ubuntu/ trusty-updates/main dpkg-dev all 1.17.5ubuntu5.8 [726 kB]
+Get:6 http://archive.ubuntu.com/ubuntu/ trusty/main build-essential amd64 11.6ubuntu6 [4,838 B]
+Get:7 http://archive.ubuntu.com/ubuntu/ trusty/main libalgorithm-diff-perl all 1.19.02-3 [50.0 kB]
+Get:8 http://archive.ubuntu.com/ubuntu/ trusty/main libalgorithm-diff-xs-perl amd64 0.04-2build4 [12.6 kB]
+Get:9 http://archive.ubuntu.com/ubuntu/ trusty/main libalgorithm-merge-perl all 0.08-2 [12.7 kB]
+Get:10 http://archive.ubuntu.com/ubuntu/ trusty/main libfile-fcntllock-perl amd64 0.14-2build1 [15.9 kB]
+Fetched 20.1 MB in 13s (1,486 kB/s)
+Selecting previously unselected package libstdc++-4.8-dev:amd64.
+(Reading database ... 62963 files and directories currently installed.)
+Preparing to unpack .../libstdc++-4.8-dev_4.8.4-2ubuntu1~14.04.4_amd64.deb ...
+Unpacking libstdc++-4.8-dev:amd64 (4.8.4-2ubuntu1~14.04.4) ...
+Selecting previously unselected package g++-4.8.
+Preparing to unpack .../g++-4.8_4.8.4-2ubuntu1~14.04.4_amd64.deb ...
+Unpacking g++-4.8 (4.8.4-2ubuntu1~14.04.4) ...
+Selecting previously unselected package g++.
+Preparing to unpack .../g++_4%3a4.8.2-1ubuntu6_amd64.deb ...
+Unpacking g++ (4:4.8.2-1ubuntu6) ...
+Selecting previously unselected package libdpkg-perl.
+Preparing to unpack .../libdpkg-perl_1.17.5ubuntu5.8_all.deb ...
+Unpacking libdpkg-perl (1.17.5ubuntu5.8) ...
+Selecting previously unselected package dpkg-dev.
+Preparing to unpack .../dpkg-dev_1.17.5ubuntu5.8_all.deb ...
+Unpacking dpkg-dev (1.17.5ubuntu5.8) ...
+Selecting previously unselected package build-essential.
+Preparing to unpack .../build-essential_11.6ubuntu6_amd64.deb ...
+Unpacking build-essential (11.6ubuntu6) ...
+Selecting previously unselected package libalgorithm-diff-perl.
+Preparing to unpack .../libalgorithm-diff-perl_1.19.02-3_all.deb ...
+Unpacking libalgorithm-diff-perl (1.19.02-3) ...
+Selecting previously unselected package libalgorithm-diff-xs-perl.
+Preparing to unpack .../libalgorithm-diff-xs-perl_0.04-2build4_amd64.deb ...
+Unpacking libalgorithm-diff-xs-perl (0.04-2build4) ...
+Selecting previously unselected package libalgorithm-merge-perl.
+Preparing to unpack .../libalgorithm-merge-perl_0.08-2_all.deb ...
+Unpacking libalgorithm-merge-perl (0.08-2) ...
+Selecting previously unselected package libfile-fcntllock-perl.
+Preparing to unpack .../libfile-fcntllock-perl_0.14-2build1_amd64.deb ...
+Unpacking libfile-fcntllock-perl (0.14-2build1) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Setting up libstdc++-4.8-dev:amd64 (4.8.4-2ubuntu1~14.04.4) ...
+Setting up g++-4.8 (4.8.4-2ubuntu1~14.04.4) ...
+Setting up g++ (4:4.8.2-1ubuntu6) ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+Setting up libdpkg-perl (1.17.5ubuntu5.8) ...
+Setting up dpkg-dev (1.17.5ubuntu5.8) ...
+Setting up build-essential (11.6ubuntu6) ...
+Setting up libalgorithm-diff-perl (1.19.02-3) ...
+Setting up libalgorithm-diff-xs-perl (0.04-2build4) ...
+Setting up libalgorithm-merge-perl (0.08-2) ...
+Setting up libfile-fcntllock-perl (0.14-2build1) ...
+Copy iso file C:\Program Files\Oracle\VirtualBox\VBoxGuestAdditions.iso into the box /tmp/VBoxGuestAdditions.iso
+Mounting Virtualbox Guest Additions ISO to: /mnt
+mount: block device /tmp/VBoxGuestAdditions.iso is write-protected, mounting read-only
+Installing Virtualbox Guest Additions 7.0.6 - guest version is 4.3.40
+Verifying archive integrity...  100%   MD5 checksums are OK. All good.
+Uncompressing VirtualBox 7.0.6 Guest Additions for Linux  100%
+VirtualBox Guest Additions installer
+VirtualBox Guest Additions: Starting.
+VirtualBox Guest Additions: Setting up modules
+VirtualBox Guest Additions: Building the VirtualBox Guest Additions kernel
+modules.  This may take a while.
+VirtualBox Guest Additions: To build modules for other installed kernels, run
+VirtualBox Guest Additions:   /sbin/rcvboxadd quicksetup <version>
+VirtualBox Guest Additions: or
+VirtualBox Guest Additions:   /sbin/rcvboxadd quicksetup all
+VirtualBox Guest Additions: Building the modules for kernel 3.13.0-170-generic.
+./install.sh: 249: ./install.sh: systemctl: not found
+ Adding system startup for /etc/init.d/vboxadd ...
+   /etc/rc0.d/K90vboxadd -> ../init.d/vboxadd
+   /etc/rc1.d/K90vboxadd -> ../init.d/vboxadd
+   /etc/rc6.d/K90vboxadd -> ../init.d/vboxadd
+   /etc/rc2.d/S10vboxadd -> ../init.d/vboxadd
+   /etc/rc3.d/S10vboxadd -> ../init.d/vboxadd
+   /etc/rc4.d/S10vboxadd -> ../init.d/vboxadd
+   /etc/rc5.d/S10vboxadd -> ../init.d/vboxadd
+ Adding system startup for /etc/init.d/vboxadd-service ...
+   /etc/rc0.d/K65vboxadd-service -> ../init.d/vboxadd-service
+   /etc/rc1.d/K65vboxadd-service -> ../init.d/vboxadd-service
+   /etc/rc6.d/K65vboxadd-service -> ../init.d/vboxadd-service
+   /etc/rc2.d/S35vboxadd-service -> ../init.d/vboxadd-service
+   /etc/rc3.d/S35vboxadd-service -> ../init.d/vboxadd-service
+   /etc/rc4.d/S35vboxadd-service -> ../init.d/vboxadd-service
+   /etc/rc5.d/S35vboxadd-service -> ../init.d/vboxadd-service
+Setting up modules
+VirtualBox Guest Additions kernel modules 7.0.6 r155176 are already available
+for kernel 3.13.0-170-generic and do not require to be rebuilt.
+Running kernel modules will not be replaced until the system is restarted
+vboxadd-service.sh: Starting VirtualBox Guest Addition service.
+VirtualBox Guest Additions: Starting.
+VirtualBox Guest Additions: Setting up modules
+VirtualBox Guest Additions: VirtualBox Guest Additions kernel modules 7.0.6
+r155176 are already available for kernel 3.13.0-170-generic and do not require
+to be rebuilt.
+VirtualBox Guest Additions: Running kernel modules will not be replaced until
+the system is restarted
+Unmounting Virtualbox Guest Additions ISO from: /mnt
+==> default: Checking for guest additions in VM...
+==> default: Mounting shared folders...
+    default: /vagrant => C:/Users/kmakovskiy/Documents/kmakovskiy/VirtualMachines/Ububtu14
+C:\Users\kmakovskiy\Documents\kmakovskiy\VirtualMachines\Ububtu14>vagrant ssh
+Welcome to Ubuntu 14.04.6 LTS (GNU/Linux 3.13.0-170-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Jul 30 10:42:06 UTC 2023
+
+  System load:  0.79              Processes:           78
+  Usage of /:   3.6% of 39.34GB   Users logged in:     0
+  Memory usage: 25%               IP address for eth0: 10.0.2.15
+  Swap usage:   0%
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+UA Infrastructure Extended Security Maintenance (ESM) is not enabled.
+
+0 updates can be installed immediately.
+0 of these updates are security updates.
+
+Enable UA Infrastructure ESM to receive 64 additional security updates.
+See https://ubuntu.com/advantage or run: sudo ua status
+
+New release '16.04.7 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+vagrant@vagrant-ubuntu-trusty-64:~$ Connection to 127.0.0.1 closed by remote host.
+Connection to 127.0.0.1 closed.
+
+C:\Users\kmakovskiy\Documents\kmakovskiy\VirtualMachines\Ububtu14>
